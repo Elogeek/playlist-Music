@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist Music</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e3ddf954eb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="top-img"></div>
+        <h1>Ma playlist</h1>
+        <table id="playlist">
+            <tr>
+                <td>
+                    <div class="video">
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vYV-XJdzupY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h2>Ma liste</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="singer">
+                    <h3>Auteur</h3>
+                </td>
+                <td class="songName">
+                    <h3>Titre chanson</h3>
+
+                </td>
+                <td class="time">
+                    <h3>Temps</h3>
+                </td>
+            </tr>
+            <tr>
+                <td class="singer">Stereopony</td>
+                <td class="songName">Hitohira No Hanabira</td>
+                <td class="time">3.43 min</td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <div class="add-list">
+                        <label for="sourceUrl">
+                            <input id="sourceUrl" type="text" placeholder="Enter audio url" />
+                        </label>
+                        <button type="button" id="add"><i class="fas fa-plus"></i>Ajouter une chanson</button>
+                    </div>
+                </td>
+                <td><button type="button" id="delete"><i class="fas fa-trash-alt"></i>Supprimer</button></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
