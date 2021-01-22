@@ -1,6 +1,9 @@
-let playlist = document.getElementById('playlist');
-let add = document.getElementById("add");
-let table = document.getElementById("playlist");
+let newList = document.getElementById('list');
+// Add Buttons:
+let addMusic = document.getElementById('addSong');
+// Del Buttons:
+let delPlaylist = document.getElementById('deleteALL');
+let delMusic = document.getElementById('deleteSong');
 
 //add song
 function addList() {
@@ -8,10 +11,10 @@ function addList() {
     sourceUrl.split(",").forEach((file) => {
        let  fileUrl = file.trim();
         if (fileUrl !== "" && playlist.indexOf(fileUrl) === -1) {
-            table.document.createElement("tr");
-            add.setAttribute('onclick','removeList(this)');
-            add.innerHTML = '&times;';
-            playlist.push(fileUrl);
+            newList.document.createElement("div");
+
+            addMusic.setAttribute('onclick','removeList(this)');
+          addMusic.push(fileUrl);
         }
     });
     document.getElementById('sourceUrl').value = '';
@@ -19,10 +22,18 @@ function addList() {
 
 //delete song
 function removeList(item) {
-    let index = playlist.indexOf(item.parentElement.firstChild.innerText);
+    let index = newPlaylist.indexOf(item.parentElement.firstChild.innerText);
     if (index !== -1){
-        playlist.splice(index,1);
-        item.parentElement.remove();
+       newPlaylist.splice(index,1);
+       delMusic.addEventListener("click", function () {
+           this.remove();
+       })
+    }
+    //delete all
+    else {
+        delPlaylist.addEventListener("click", function (e) {
+            newPlaylist.remove();
+        })
     }
 }
 let video = document.querySelector(".video");
@@ -38,3 +49,4 @@ input.addEventListener("keyup", function(event) {
         addList();
     }
 });
+
