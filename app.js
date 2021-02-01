@@ -5,6 +5,9 @@ let addMusic = document.getElementById('addSong');
 let delPlaylist = document.getElementById('deleteALL');
 let delMusic = document.getElementById('deleteSong');
 
+let list = document.getElementById("list");
+
+
 //add song
 function addList() {
     let sourceUrl = document.getElementById('sourceUrl').value;
@@ -12,9 +15,9 @@ function addList() {
        let  fileUrl = file.trim();
         if (fileUrl !== "" && playlist.indexOf(fileUrl) === -1) {
             newList.document.createElement("div");
-
             addMusic.setAttribute('onclick','removeList(this)');
           addMusic.push(fileUrl);
+          newList.appendChild(list);
         }
     });
     document.getElementById('sourceUrl').value = '';
@@ -44,7 +47,7 @@ video.addEventListener('error', function(){
 
 let input = document.getElementById("sourceUrl");
 input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 10) {
         event.preventDefault();
         addList();
     }
