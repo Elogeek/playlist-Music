@@ -69,7 +69,7 @@ i {
     border: 5px inset black;
 }
 
-#auteur,#song,#timeSong {
+#auteur,#song,#timeSong,#linkYoutube {
     display:flex;
     flex-flow: row nowrap;
     justify-content: space-between;
